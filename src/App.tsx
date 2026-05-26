@@ -124,7 +124,7 @@ export default function App() {
       {
         id: "m0",
         role: "model",
-        parts: [{ text: "Halo Kak Budi! Aku Dopi, asisten pintarmu. Mau asisten bantu pantau catatan keuangan atau butuh tips hebat seputar hemat bulan ini? Yuk, ceritakan keperluanmu!" }],
+        parts: [{ text: "Halo Kak Barru! Aku Dopi, asisten pintarmu. Mau asisten bantu pantau catatan keuangan atau butuh tips hebat seputar hemat bulan ini? Yuk, ceritakan keperluanmu!" }],
         timestamp: new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
       }
     ];
@@ -261,7 +261,7 @@ export default function App() {
       badge: "bg-emerald-100 text-emerald-800",
       sidebarBg: "bg-slate-900",
     },
-    "Keluarga Budi": {
+    "Keluarga Barru": {
       primary: "indigo-600",
       bgGradient: "from-indigo-50 to-violet-50",
       accent: "indigo-500",
@@ -271,7 +271,7 @@ export default function App() {
       badge: "bg-indigo-100 text-indigo-800",
       sidebarBg: "bg-indigo-950",
     },
-    "Toko Kopi Budi": {
+    "Toko Kopi Barru": {
       primary: "amber-700",
       bgGradient: "from-amber-50 to-amber-100/40",
       accent: "amber-600",
@@ -759,8 +759,8 @@ export default function App() {
             <div className="space-y-2">
               {[
                 { id: "Personal" as WorkspaceType, name: "Personal (Harian)", icon: User, color: "border-emerald-500/20 text-emerald-400 hover:bg-emerald-950/20" },
-                { id: "Keluarga Budi" as WorkspaceType, name: "Keluarga Budi", icon: Users, color: "border-indigo-500/20 text-indigo-400 hover:bg-indigo-950/20" },
-                { id: "Toko Kopi Budi" as WorkspaceType, name: "Toko Kopi Budi (UMKM)", icon: Coffee, color: "border-amber-500/20 text-amber-400 hover:bg-amber-950/20" }
+                { id: "Keluarga Barru" as WorkspaceType, name: "Keluarga Barru", icon: Users, color: "border-indigo-500/20 text-indigo-400 hover:bg-indigo-950/20" },
+                { id: "Toko Kopi Barru" as WorkspaceType, name: "Toko Kopi Barru (UMKM)", icon: Coffee, color: "border-amber-500/20 text-amber-400 hover:bg-amber-950/20" }
               ].map(w => {
                 const IconComp = w.icon;
                 const isActive = workspace === w.id;
@@ -822,18 +822,18 @@ export default function App() {
             </div>
             
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
-              {workspace === "Personal" && "Selamat Pagi Budi! 👋"}
-              {workspace === "Keluarga Budi" && "Ruang Kas Keluarga Budi 🏠"}
-              {workspace === "Toko Kopi Budi" && "Kedai Kopi Budi (UMKM) ☕"}
+              {workspace === "Personal" && "Selamat Pagi Barru! 👋"}
+              {workspace === "Keluarga Barru" && "Ruang Kas Keluarga Barru 🏠"}
+              {workspace === "Toko Kopi Barru" && "Kedai Kopi Barru (UMKM) ☕"}
             </h2>
             
             <p className="text-slate-450 text-sm mt-0.5 flex items-center gap-1 text-slate-400">
               <Sparkles size={14} className="text-amber-400 animate-bounce" />
-              <span>DoPi AI : </span>
+              <span>DoPi: </span>
               <strong className="text-white">
                 {workspace === "Personal" && "Sisa anggaran jajan minggu ini tinggal Rp 35.000 saja loh, yuk kurangi nongkrong."}
-                {workspace === "Keluarga Budi" && "Sumbangan kas bulanan sudah lengkap. Belanja bulanan sayur terdeteksi aman dari budget limit."}
-                {workspace === "Toko Kopi Budi" && "Pendapatan katering kemarin mantap! Segera tagih piutang di Pak Lurah ya."}
+                {workspace === "Keluarga Barru" && "Sumbangan kas bulanan sudah lengkap. Belanja bulanan sayur terdeteksi aman dari budget limit."}
+                {workspace === "Toko Kopi Barru" && "Pendapatan katering kemarin mantap! Segera tagih piutang di Pak Lurah ya."}
               </strong>
             </p>
           </div>
@@ -963,12 +963,14 @@ export default function App() {
         {/* ==================== ACTION BAR: THE SMART INPUT PLATFORM BUTTONS ==================== */}
         <section className="bg-slate-900 rounded-2xl p-4 md:p-5 border border-slate-800 shadow-lg text-slate-100 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <h3 className="text-base font-bold text-white flex items-center gap-1.5">
-                <Sparkles size={17} className="text-indigo-400" />
-                DoPi AI
-              </h3>
-              <p className="text-xs text-slate-400">Catat belanja mu sekarang!</p>
+            <div className="flex items-start gap-2.5">
+              <Sparkles size={20} className="text-indigo-400 mt-1 shrink-0" />
+              <div>
+                <h3 className="text-base font-bold text-white leading-tight">
+                  DoPi AI
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">Catat belanja mu sekarang!</p>
+              </div>
             </div>
 
             {/* Core Action Callouts */}
@@ -1006,12 +1008,14 @@ export default function App() {
         {/* ==================== CORE TRANSACTIONS MANAGER TABLE & FILTERS ==================== */}
         <section className="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl mb-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-            <div>
-              <h3 className="text-lg font-black text-white flex items-center gap-1.5">
-                <Layers size={20} className="text-emerald-400" />
-                Daftar Catatan Transaksi {workspace}
-              </h3>
-              <p className="text-xs text-slate-400 mt-0.5">Mutasi kas digital</p>
+            <div className="flex items-start gap-2.5">
+              <Layers size={20} className="text-emerald-400 mt-1 shrink-0" />
+              <div>
+                <h3 className="text-lg font-black text-white leading-tight">
+                  Daftar Catatan Transaksi {workspace}
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">Mutasi kas digital</p>
+              </div>
             </div>
 
             {/* Inbuilt filter actions bar */}
@@ -1114,7 +1118,7 @@ export default function App() {
                           {/* Center Column: Specific wallet utilized */}
                           <td className="py-4 px-4 font-bold text-slate-200">
                             <span className="px-2 py-1 rounded bg-slate-950 border border-slate-800 text-[11px]">
-                              💰 {tx.wallet}
+                              {tx.wallet}
                             </span>
                           </td>
 
@@ -1126,10 +1130,10 @@ export default function App() {
                               tx.source === "wa" ? "bg-green-950/40 text-green-400 border-green-800/45" :
                               "bg-slate-850 text-slate-400 border-slate-750"
                             }`}>
-                              {tx.source === "ocr" && "📸 OCR Struk"}
-                              {tx.source === "voice" && "🎤 Suara AI"}
-                              {tx.source === "wa" && "💬 WA Sync"}
-                              {tx.source === "manual" && "✍️ Manual"}
+                              {tx.source === "ocr" && "OCR Struk"}
+                              {tx.source === "voice" && "Suara AI"}
+                              {tx.source === "wa" && "WA Sync"}
+                              {tx.source === "manual" && "Manual"}
                             </span>
                           </td>
 
@@ -1277,11 +1281,15 @@ export default function App() {
           
           {/* Target Savings Goals View */}
           <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800">
-            <h3 className="text-base font-bold text-white flex items-center gap-1.5 mb-1">
-              <Award size={20} className="text-yellow-400" />
-              Target & Rencana Impian (Tabungan)
-            </h3>
-            <p className="text-xs text-slate-400 mb-4">Investasi cerdas untuk masa depan</p>
+            <div className="flex items-start gap-2.5 mb-4">
+              <Award size={20} className="text-yellow-400 mt-1 shrink-0" />
+              <div>
+                <h3 className="text-base font-bold text-white leading-tight">
+                  Target & Rencana Impian (Tabungan)
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">Investasi cerdas untuk masa depan</p>
+              </div>
+            </div>
 
             <div className="space-y-4">
               {activeGoals.map(g => {
@@ -1334,16 +1342,20 @@ export default function App() {
             </div>
           </div>
 
-          {/* UMKM Merchant business cashflow debts section (Visible always, highly details under Toko Kopi Budi) */}
+          {/* UMKM Merchant business cashflow debts section (Visible always, highly details under Toko Kopi Barru) */}
           <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800">
-            <div className="flex justify-between items-center mb-1">
-              <h3 className="text-base font-bold text-white flex items-center gap-1.5">
-                <Briefcase size={20} className="text-cyan-400" />
-                Daftar Hutang / Piutang Usaha
-              </h3>
-              <span className="text-[10px] bg-cyan-950 text-cyan-400 border border-cyan-800 font-bold px-2 py-0.5 rounded-full">UMKM Space</span>
+            <div className="flex justify-between items-start gap-4 mb-4">
+              <div className="flex items-start gap-2.5">
+                <Briefcase size={20} className="text-cyan-400 mt-1 shrink-0" />
+                <div>
+                  <h3 className="text-base font-bold text-white leading-tight">
+                    Daftar Hutang / Piutang Usaha
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-1">Pencatatan kas bisnis</p>
+                </div>
+              </div>
+              <span className="text-[10px] bg-cyan-950 text-cyan-400 border border-cyan-800 font-bold px-2 py-0.5 rounded-full shrink-0">UMKM Space</span>
             </div>
-            <p className="text-xs text-slate-400 mb-4">Pencatatan kas bisnis</p>
 
             {/* Quick Add Form Mini */}
             <form onSubmit={handleAddBusinessItem} className="flex flex-col gap-2 mb-4 p-3 bg-slate-950/50 rounded-xl border border-slate-800">

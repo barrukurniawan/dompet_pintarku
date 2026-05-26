@@ -164,16 +164,16 @@ export const defaultTransactions: Transaction[] = [
     source: "manual",
   },
 
-  // 2. Workspace: Keluarga Budi
+  // 2. Workspace: Keluarga Barru
   {
     id: "tx-f1",
     amount: 8000000,
     type: "income",
     category: "Gaji",
-    note: "Sumbangan Uang Kas Bersama Budi & Istri",
+    note: "Sumbangan Uang Kas Bersama Barru & Istri",
     date: "2026-05-18",
     wallet: "BCA",
-    workspace: "Keluarga Budi",
+    workspace: "Keluarga Barru",
     source: "manual",
   },
   {
@@ -184,7 +184,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Belanja Bulanan Sayur & Susu Anak di Supermarket",
     date: "2026-05-24",
     wallet: "BCA",
-    workspace: "Keluarga Budi",
+    workspace: "Keluarga Barru",
     source: "ocr",
   },
   {
@@ -195,7 +195,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Obat Apotek & Vitamin Keluarga",
     date: "2026-05-25",
     wallet: "GoPay",
-    workspace: "Keluarga Budi",
+    workspace: "Keluarga Barru",
     source: "voice",
   },
   {
@@ -206,7 +206,7 @@ export const defaultTransactions: Transaction[] = [
     note: "SPP Bulanan Sekolah Anak & Kursus Piano",
     date: "2026-05-21",
     wallet: "BCA",
-    workspace: "Keluarga Budi",
+    workspace: "Keluarga Barru",
     source: "manual",
   },
   {
@@ -217,11 +217,11 @@ export const defaultTransactions: Transaction[] = [
     note: "Makan Malam Bersama Mertua di Resto Seafood",
     date: "2026-05-23",
     wallet: "Cash",
-    workspace: "Keluarga Budi",
+    workspace: "Keluarga Barru",
     source: "manual",
   },
 
-  // 3. Workspace: Toko Kopi Budi (Business/UMKM)
+  // 3. Workspace: Toko Kopi Barru (Business/UMKM)
   {
     id: "tx-b1",
     amount: 2450000,
@@ -230,7 +230,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Penjualan Kopi Harian (80 cup Espresso Latte)",
     date: "2026-05-25",
     wallet: "GoPay",
-    workspace: "Toko Kopi Budi",
+    workspace: "Toko Kopi Barru",
     source: "manual",
   },
   {
@@ -241,7 +241,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Penjualan Kopi Akhir Pekan (Event Bazar Kampus)",
     date: "2026-05-24",
     wallet: "BCA",
-    workspace: "Toko Kopi Budi",
+    workspace: "Toko Kopi Barru",
     source: "manual",
   },
   {
@@ -252,7 +252,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Pesanan Catering Kopi Kapsul Kantor Tokopedia",
     date: "2026-05-15",
     wallet: "BCA",
-    workspace: "Toko Kopi Budi",
+    workspace: "Toko Kopi Barru",
     source: "manual",
   },
   {
@@ -263,7 +263,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Beli Bahan Baku Susu UHT Greenfields 2 Karton",
     date: "2026-05-23",
     wallet: "Cash",
-    workspace: "Toko Kopi Budi",
+    workspace: "Toko Kopi Barru",
     source: "ocr",
   },
   {
@@ -274,7 +274,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Beli Biji Kopi Roast-bean Arabica Gayo 5Kg",
     date: "2026-05-22",
     wallet: "BCA",
-    workspace: "Toko Kopi Budi",
+    workspace: "Toko Kopi Barru",
     source: "manual",
   },
   {
@@ -285,7 +285,7 @@ export const defaultTransactions: Transaction[] = [
     note: "Sewa Tempat & Listrik Kios Bulanan",
     date: "2026-05-10",
     wallet: "BCA",
-    workspace: "Toko Kopi Budi",
+    workspace: "Toko Kopi Barru",
     source: "manual",
   },
 ];
@@ -297,11 +297,11 @@ export const defaultBudgets: Budget[] = [
   { id: "b3", category: "Belanja", monthlyLimit: 3000000, spent: 1200000, workspace: "Personal" },
   { id: "b4", category: "Tagihan", monthlyLimit: 1500000, spent: 650000, workspace: "Personal" },
   // Keluarga
-  { id: "b5", category: "Belanja", monthlyLimit: 4000000, spent: 1450000, workspace: "Keluarga Budi" },
-  { id: "b6", category: "Kesehatan", monthlyLimit: 1000000, spent: 250000, workspace: "Keluarga Budi" },
-  { id: "b7", category: "Pendidikan", monthlyLimit: 5000000, spent: 2100000, workspace: "Keluarga Budi" },
+  { id: "b5", category: "Belanja", monthlyLimit: 4000000, spent: 1450000, workspace: "Keluarga Barru" },
+  { id: "b6", category: "Kesehatan", monthlyLimit: 1000000, spent: 250000, workspace: "Keluarga Barru" },
+  { id: "b7", category: "Pendidikan", monthlyLimit: 5000000, spent: 2100000, workspace: "Keluarga Barru" },
   // Bisnis
-  { id: "b8", category: "Bisnis", monthlyLimit: 10000000, spent: 1300000, workspace: "Toko Kopi Budi" },
+  { id: "b8", category: "Bisnis", monthlyLimit: 10000000, spent: 1300000, workspace: "Toko Kopi Barru" },
 ];
 
 export const defaultGoals: SavingsGoal[] = [
@@ -309,13 +309,13 @@ export const defaultGoals: SavingsGoal[] = [
   { id: "g1", name: "Beli iPhone 17 Pro", targetAmount: 22000000, currentAmount: 14500000, deadline: "2026-12", icon: "Smartphone", workspace: "Personal" },
   { id: "g2", name: "DP Motor Vespa Matic", targetAmount: 15000000, currentAmount: 8000000, deadline: "2026-09", icon: "Bike", workspace: "Personal" },
   // Keluarga
-  { id: "g3", name: "Dana Liburan Keluarga ke Bali", targetAmount: 18000000, currentAmount: 12000000, deadline: "2026-10", icon: "Palmtree", workspace: "Keluarga Budi" },
+  { id: "g3", name: "Dana Liburan Keluarga ke Bali", targetAmount: 18000000, currentAmount: 12000000, deadline: "2026-10", icon: "Palmtree", workspace: "Keluarga Barru" },
   // Bisnis
-  { id: "g4", name: "Beli Mesin Espresso La Marzocco", targetAmount: 45000000, currentAmount: 15000000, deadline: "2026-11", icon: "Coffee", workspace: "Toko Kopi Budi" },
+  { id: "g4", name: "Beli Mesin Espresso La Marzocco", targetAmount: 45000000, currentAmount: 15000000, deadline: "2026-11", icon: "Coffee", workspace: "Toko Kopi Barru" },
 ];
 
 export const defaultBusinessItems: BusinessCashflow[] = [
   { id: "bf1", type: "piutang", amount: 450000, counterParty: "Kantor Kelurahan (Pak Lurah)", dueDate: "2026-06-03", isPaid: false, notes: "Kopi untuk rapat koordinasi sisa pembayaran" },
   { id: "bf2", type: "hutang", amount: 1500000, counterParty: "Supplier Cup Plastik (Hendra)", dueDate: "2026-05-29", isPaid: false, notes: "Utang nota pasokan 1000 cup sablon" },
-  { id: "bf3", type: "piutang", amount: 300000, counterParty: "Budi Santoso (Teman Dekat)", dueDate: "2026-06-05", isPaid: false, notes: "Grosir kopi bubuk 2kg belum ditransfer" },
+  { id: "bf3", type: "piutang", amount: 300000, counterParty: "Barru Santoso (Teman Dekat)", dueDate: "2026-06-05", isPaid: false, notes: "Grosir kopi bubuk 2kg belum ditransfer" },
 ];

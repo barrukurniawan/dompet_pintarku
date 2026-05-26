@@ -1,4 +1,4 @@
-export type WorkspaceType = "Personal" | "Keluarga Budi" | "Toko Kopi Budi";
+export type WorkspaceType = "Personal" | "Keluarga Barru" | "Toko Kopi Barru";
 
 export interface Transaction {
   id: string;
