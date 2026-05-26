@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import fs from "fs";
 import { GoogleGenAI, Type } from "@google/genai";
 import { createServer as createViteServer } from "vite";
 
@@ -268,7 +269,10 @@ app.post("/api/chat", async (req, res) => {
 
 // Start integration with Vite standard middleware
 async function startServer() {
-  if (process.env.NODE_ENV !== "production") {
+  const distPath = path.join(process.cwd(), "dist");
+  const isProductionBuild = process.env.NODE_ENV === "production" || fs.existsSync(path.join(distPath, "index.html"));
+
+  if (!isProductionBuild) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -276,7 +280,6 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     // Prod static files
-    const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));

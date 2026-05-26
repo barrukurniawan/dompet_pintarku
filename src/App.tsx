@@ -822,14 +822,13 @@ export default function App() {
             </div>
             
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
-              {workspace === "Personal" && "Selamat Pagi Barru! 👋"}
-              {workspace === "Keluarga Barru" && "Ruang Kas Keluarga Barru 🏠"}
-              {workspace === "Toko Kopi Barru" && "Kedai Kopi Barru (UMKM) ☕"}
+              {workspace === "Personal" && "👋  Selamat Pagi Barru"}
+              {workspace === "Keluarga Barru" && "🏠  Ruang Kas Keluarga Barru"}
+              {workspace === "Toko Kopi Barru" && "☕  Kedai Kopi Barru (UMKM)"}
             </h2>
             
             <p className="text-slate-450 text-sm mt-0.5 flex items-center gap-1 text-slate-400">
               <Sparkles size={14} className="text-amber-400 animate-bounce" />
-              <span>DoPi: </span>
               <strong className="text-white">
                 {workspace === "Personal" && "Sisa anggaran jajan minggu ini tinggal Rp 35.000 saja loh, yuk kurangi nongkrong."}
                 {workspace === "Keluarga Barru" && "Sumbangan kas bulanan sudah lengkap. Belanja bulanan sayur terdeteksi aman dari budget limit."}
