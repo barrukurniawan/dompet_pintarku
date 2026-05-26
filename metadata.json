@@ -1,0 +1,6 @@
+{
+  "name": "Dompet Pintarku",
+  "description": "Asisten keuangan pribadi pintar modular bertenaga AI untuk pencatatan otomatis via Teks/Suara, pelacak anggaran, simulasi scan struk, dan ruang kerja UMKM/Keluarga.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
